@@ -1,0 +1,325 @@
+/* ---------- Root ---------- */
+
+.home {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    font-family: system-ui, sans-serif;
+    background: linear-gradient(135deg, #ffdce0 0%, #fff6f6 100%);
+}
+
+
+/* ---------- Image Reveal ---------- */
+
+.image-reveal {
+    position: absolute;
+    inset: 0;
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    clip-path: inset(0 100% 0 0);
+    animation: reveal 8s linear forwards;
+}
+
+@keyframes reveal {
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+
+/* ---------- Pencil Movement ---------- */
+
+.pencil-lottie {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 120px;
+    pointer-events: none;
+    z-index: 100;
+    animation: pencilMove 8s linear forwards;
+}
+
+
+/* Combined horizontal sweep + vertical vibration */
+
+@keyframes pencilMove {
+
+    0% {
+        transform: translate(-5, 0);
+    }
+
+    10% {
+        transform: translate(5vw, -20vh);
+    }
+
+    20% {
+        transform: translate(15vw, 70vh);
+    }
+
+    30% {
+        transform: translate(25vw, -20vh);
+    }
+
+    40% {
+        transform: translate(35vw, 70vh);
+    }
+
+    50% {
+        transform: translate(45vw, -20vh);
+    }
+
+    60% {
+        transform: translate(55vw, 70vh);
+    }
+
+    70% {
+        transform: translate(65vw, -20vh);
+    }
+
+    80% {
+        transform: translate(75vw, 70vh);
+    }
+
+    90% {
+        transform: translate(85vw, -20vh);
+    }
+
+    100% {
+        transform: translate(calc(100vw - 100px), 0);
+    }
+}
+
+
+/* ---------- Proposal Box ---------- */
+
+.proposal-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: linear-gradient(135deg, #ffdce0 0%, #fff6f6 100%);
+    padding: 28px 30px;
+    border-radius: 18px;
+    text-align: center;
+
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+}
+
+
+/* ---------- Buttons ---------- */
+
+.btn-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.yes,
+.no {
+    padding: 10px 22px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.yes {
+    background: #ff4d6d;
+    color: white;
+}
+
+.no {
+    background: #ff4d6d;
+    transition: transform 0.25s ease;
+}
+
+/* Popup Center */
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  z-index: 1000;
+  color: black;
+}
+
+.popup button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Overlay */
+
+.love-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Popup box */
+
+.love-popup {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 18px;
+  text-align: center;
+  width: 320px;
+  max-width: 90%;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+}
+
+/* Animation size */
+
+.love-popup svg {
+  height: 160px !important;
+}
+
+/* Text */
+
+.love-popup h2 {
+  margin: 10px 0 15px;
+  font-weight: 700;
+}
+
+/* Button */
+
+.love-popup button {
+  padding: 8px 16px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Logout button top-right */
+
+.logout-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #ff4d6d;
+  cursor: pointer;
+  font-weight: 500;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #ff4d6d;
+  color: white;
+}
+
+
+/* Top banner */
+
+.top-banner {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff4d6d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 0 0 12px 12px;
+  font-weight: 500;
+  animation: slideDown 0.5s ease;
+  z-index: 999;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, -100%);
+  }
+  to {
+    transform: translate(-50%, 0);
+  }
+}
+
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px) {
+
+    .pencil-lottie {
+        width: 80px;
+    }
+
+    @keyframes pencilMove {
+
+        0% {
+            transform: translate(-5, 0);
+        }
+
+        10% {
+            transform: translate(-5vw, -10vh);
+        }
+
+        20% {
+            transform: translate(5vw, 70vh);
+        }
+
+        30% {
+            transform: translate(15vw, -10vh);
+        }
+
+        40% {
+            transform: translate(25vw, 70vh);
+        }
+
+        50% {
+            transform: translate(35vw, -10vh);
+        }
+
+        60% {
+            transform: translate(45vw, 70vh);
+        }
+
+        70% {
+            transform: translate(55vw, -10vh);
+        }
+
+        80% {
+            transform: translate(65vw, 70vh);
+        }
+
+        90% {
+            transform: translate(75vw, -10vh);
+        }
+
+        100% {
+            transform: translate(calc(100vw - 60px), 0);
+        }
+    }
+
+    .proposal-box {
+        padding: 22px;
+        width: 85%;
+    }
+}
