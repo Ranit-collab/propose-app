@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
 
-import bgImage from "../assets/couple.jpg";
+import bgImage from "../assets/image.jpg";
 import pencilAnimation from "../assets/pencil.json";
 import pleaseAnimation from "../assets/please.json";
 import loveAnimation from "../assets/love.json";
