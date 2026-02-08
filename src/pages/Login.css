@@ -36,7 +36,8 @@
 .login-title {
     margin-block-start: 0px;
     margin-block-end: 0px;
-    margin-left: -50px;
+    color: black;
+    /* margin-left: -50px; */
 }
 
 .login-subtitle {
